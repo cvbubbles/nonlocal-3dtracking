@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <D_CVF>f:\dev\cvf-01\cvf\</D_CVF>
+    <D_CVFX>f:\dev\cvfx\</D_CVFX>
+    <BIN_PATH>bin-$(PlatformToolset)/$(Platform)/Release/</BIN_PATH>
+    <OPENCV_VER>3413</OPENCV_VER>
+    <ASSIMP_VER>501</ASSIMP_VER>
+    <D_OPENCV>$(D_CVFX)/opencv$(OPENCV_VER)/</D_OPENCV>
+    <D_INCLUDE>$(D_CVF)/;$(D_OPENCV)/include;$(D_CVFX)/freeglut300/include/;$(D_CVFX)/assim$(ASSIMP_VER)/include;$(D_CVFX)/glm0963/include/;$(D_CVFX)/codec10/include/;$(D_CVFX)/libx1/;$(D_CVFX)/glew/include;$(D_CVFX)/vcglib/;$(D_CVFX)/eigen3/;$(D_CVFX)/glfw334/include;</D_INCLUDE>
+    <D_LIB>$(D_CVFX)/bin/$(Platform)/;$(D_OPENCV)/$(BIN_PATH);$(D_CVFX)/freeglut300/$(BIN_PATH);$(D_CVFX)/assim$(ASSIMP_VER)/$(BIN_PATH);$(D_CVFX)/libx1/$(BIN_PATH);$(D_CVFX)/codec10/lib/$(Platform)/;$(D_CVFX)/glew/bin/Release/$(Platform)/;$(D_CVFX)/glfw334/bin-v140/x64/release;</D_LIB>
+    <D_PATH>$(D_LIB);</D_PATH>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../;$(D_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/D"OPENCV_VER=$(OPENCV_VER)" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(D_LIB);$(D_CVFX)\freeglut300\bin-v140\x64\release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="D_CVF">
+      <Value>$(D_CVF)</Value>
+    </BuildMacro>
+    <BuildMacro Include="D_CVFX">
+      <Value>$(D_CVFX)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BIN_PATH">
+      <Value>$(BIN_PATH)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OPENCV_VER">
+      <Value>$(OPENCV_VER)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ASSIMP_VER">
+      <Value>$(ASSIMP_VER)</Value>
+    </BuildMacro>
+    <BuildMacro Include="D_OPENCV">
+      <Value>$(D_OPENCV)</Value>
+    </BuildMacro>
+    <BuildMacro Include="D_INCLUDE">
+      <Value>$(D_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="D_LIB">
+      <Value>$(D_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="D_PATH">
+      <Value>$(D_PATH)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
