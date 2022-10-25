@@ -43,9 +43,7 @@ The code is developed with VS2019, and can be easily ported to linux.
 
 It depends on **OpenCV 3.4.13, Assimp 5.01 and FreeGLUT 3.00**
 
-The repository [cvf](https://github.com/cvbubbles/cvf) is used in our code.
-
-A detailed use guideline will coming soon...
+Some functions in [cvf](https://github.com/cvbubbles/cvf) is used in our code. To ensure program compatibility, we also provide the same cvf as in our experiments in current repository. You can configure the cvf environment in VS2019 to run the code.
 
 ## Usage
 
